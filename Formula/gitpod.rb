@@ -6,16 +6,16 @@ class Gitpod < Formula
   
     if OS.mac? && Hardware::CPU.intel?
       url "https://gitpod.io/static/bin/gitpod-cli-darwin-amd64"
-      sha256 "7f31c4272f39fb17c6b43e550d6f5cb732c4bb6bd1c74e41956a99448ced3cfa"
+      sha256 "3e6022b0220d2faf7691deeb0e01ea6910713704997e64b7670bf6d5795df68f"
     elsif OS.mac? && Hardware::CPU.arm?
       url "https://gitpod.io/static/bin/gitpod-cli-darwin-arm64"
-      sha256 "2b5d9c0f32da1dcee6dde8974117cb49b218ed7b9b9d0b8ec2247d260b00369d"
+      sha256 "0c6cb8c0907d02de38bea942697d407cccf17d73d77b4ceb2fb911e93ce382b7"
     elsif OS.linux? && Hardware::CPU.intel?
       url "https://gitpod.io/static/bin/gitpod-cli-linux-amd64"
-      sha256 "dbc35c88784744b74ef37d6a2e22accb8ee6b4f8763403067822cc2ebbdf47d3"
+      sha256 "4ea925a07341efcebf395c08ac8bfb80522555fbbc4fba43b6aa40cd411bea85"
     elsif OS.linux? && Hardware::CPU.arm?
       url "https://gitpod.io/static/bin/gitpod-cli-linux-arm64"
-      sha256 "5feb8cbd08f8de0c6cc342fb99033b12e9151b2acc9adb1464ef15abb969fcb4"
+      sha256 "3a7bafea273a09b567fba4315d92bb343698969c46c2f1f066c65a8744c74c18"
     end
   
     def install
