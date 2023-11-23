@@ -1,0 +1,34 @@
+name: Update Gitpod Homebrew formula
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run every day after WebApp deployment
+    - cron: "0 13 * * *"
+
+jobs:
+  update-checksums:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set git identity
+        run: |
+          git config --global user.name $GITHUB_USER
+          git config --global user.email $GITHUB_EMAIL
+        env:
+          GITHUB_USER: roboquat
+          GITHUB_EMAIL: roboquat@gitpod.io
+
+      - name: Update the formula version
+        run: |
+          LATEST_VERSION=$(curl -s https://gitpod.io/static/bin/manifest.json | jq -r '.version')
+          sed -i "s/^  version .*/  version \"$LATEST_VERSION\"/" Formula/gitpod.rb
+
+      - name: Commit and push if changes were made
+        run: |
+          git add Formula/gitpod.rb
+          git commit -m "Update formula version to $LATEST_VERSION" || exit 0
+          git push
