@@ -1,0 +1,38 @@
+name: Homebrew Formula Test
+
+on: [push, pull_request]
+
+jobs:
+  test_formula:
+    name: Test Homebrew Formula
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Set up Homebrew
+      uses: Homebrew/actions/setup-homebrew@55e35ac78132cc31ce174408f40a9676e64aa0e2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install dependencies (macOS)
+      if: runner.os == 'macOS'
+      run: |
+          brew install --build-from-source ./Formula/gitpod.rb
+
+    - name: Install dependencies (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install build-essential
+        brew install --build-from-source ./Formula/gitpod.rb
+
+    - name: Test Formula
+      run: brew test gitpod
+
+    - name: Audit Formula
+      run: brew audit --new-formula gitpod
