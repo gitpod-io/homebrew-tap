@@ -25,6 +25,8 @@ class Leeway < Formula
     url "https://github.com/gitpod-io/leeway/releases/download/v0.8.2/leeway_0.8.2_Linux_arm64.tar.gz"
   end
 
+  depends_on "coreutils"
+
   def install
     bin.install "leeway"
   end
