@@ -12,19 +12,19 @@ jobs:
 
     steps:
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Homebrew
       uses: Homebrew/actions/setup-homebrew@55e35ac78132cc31ce174408f40a9676e64aa0e2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Install dependencies (macOS)
+    - name: Install formulas (macOS)
       if: runner.os == 'macOS'
       run: |
-          brew install --build-from-source ./Formula/gitpod.rb
+        brew install --build-from-source ./Formula/gitpod.rb
 
-    - name: Install dependencies (Linux)
+    - name: Install formulas (Linux)
       if: runner.os == 'Linux'
       run: |
         sudo apt-get update
