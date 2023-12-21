@@ -2,7 +2,7 @@ class Gitpod < Formula
     desc "The Gitpod CLI"
     homepage "https://gitpod.io"
     license "AGPL v3.0"
-    version "0.1.1"
+    version "0.1.4"
   
     if OS.mac? && Hardware::CPU.intel?
       url "https://gitpod.io/static/bin/gitpod-cli-darwin-amd64"
@@ -24,7 +24,8 @@ class Gitpod < Formula
       mv "gitpod-cli-darwin-amd64", "gitpod" if OS.mac? && Hardware::CPU.intel?
       mv "gitpod-cli-linux-arm64", "gitpod" if OS.linux? && Hardware::CPU.arm?
       mv "gitpod-cli-linux-amd64", "gitpod" if OS.linux? && Hardware::CPU.intel?
-      bin.install "gitpod"
+      bin.install "bin/gitpod"
+      generate_completions_from_executable(bin/"gitpod", "completion")
     end
   
     test do
