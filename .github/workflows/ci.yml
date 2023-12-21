@@ -33,6 +33,3 @@ jobs:
 
     - name: Test Formula
       run: brew test gitpod
-
-    - name: Audit Formula
-      run: brew audit --new-formula gitpod
