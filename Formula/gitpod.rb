@@ -24,7 +24,7 @@ class Gitpod < Formula
       mv "gitpod-cli-darwin-amd64", "gitpod" if OS.mac? && Hardware::CPU.intel?
       mv "gitpod-cli-linux-arm64", "gitpod" if OS.linux? && Hardware::CPU.arm?
       mv "gitpod-cli-linux-amd64", "gitpod" if OS.linux? && Hardware::CPU.intel?
-      bin.install "bin/gitpod"
+      bin.install "gitpod"
       generate_completions_from_executable(bin/"gitpod", "completion")
     end
   
