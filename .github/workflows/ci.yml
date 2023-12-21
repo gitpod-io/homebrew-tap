@@ -22,14 +22,14 @@ jobs:
     - name: Install formulas (macOS)
       if: runner.os == 'macOS'
       run: |
-        brew install --build-from-source ./Formula/gitpod.rb
+        brew install --build-from-source ./Formula/*.rb
 
     - name: Install formulas (Linux)
       if: runner.os == 'Linux'
       run: |
         sudo apt-get update
         sudo apt-get install build-essential
-        brew install --build-from-source ./Formula/gitpod.rb
+        brew install --build-from-source ./Formula/*.rb
 
     - name: Test Formula
-      run: brew test gitpod
+      run: brew test gitpod && brew test leeway
