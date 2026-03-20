@@ -36,6 +36,6 @@ class Ona < Formula
   end
 
   test do
-    assert_match "ona version", shell_output("#{bin}/ona version 2>&1")
+    assert_match "Version:", shell_output("#{bin}/ona version 2>&1")
   end
 end
