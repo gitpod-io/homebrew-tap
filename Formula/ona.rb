@@ -9,7 +9,6 @@ class Ona < Formula
   homepage "https://ona.com"
   version "20260312.2036.0"
   license "UNLICENSED"
-  auto_updates true
 
   on_macos do
     if Hardware::CPU.arm?
