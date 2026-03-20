@@ -32,7 +32,6 @@ class Ona < Formula
 
   def install
     binary_name = "gitpod-#{OS.kernel_name.downcase}-#{Hardware::CPU.arch == :arm64 ? "arm64" : "amd64"}"
-    binary_name += ".exe" if OS.windows?
     bin.install binary_name => "ona"
   end
 
