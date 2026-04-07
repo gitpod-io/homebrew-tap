@@ -7,26 +7,26 @@
 class Ona < Formula
   desc "CLI for Ona — development environments"
   homepage "https://ona.com"
-  version "20260402.10948.0"
+  version "20260407.10944.0"
   license "UNLICENSED"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://releases.gitpod.io/cli/releases/20260402.10948.0/gitpod-darwin-arm64"
-      sha256 "380d99390cf2c402e3ddc530887de04f9acac1f9a906da7933d4441d26f0b195"
+      url "https://releases.gitpod.io/cli/releases/20260407.10944.0/gitpod-darwin-arm64"
+      sha256 "61a961436aa66b9e01242a2ccccb5861d58d94a585d7311ea47c6b73eb44ad56"
     else
-      url "https://releases.gitpod.io/cli/releases/20260402.10948.0/gitpod-darwin-amd64"
-      sha256 "b1ffc0c702cfa6a7762d4503e36092cdeacd187e21e7835ee2b977e48cfe9195"
+      url "https://releases.gitpod.io/cli/releases/20260407.10944.0/gitpod-darwin-amd64"
+      sha256 "2040be0ba7b80f05fc5584b3cc2d1391ff88c74dfd92eb8e1095867b6e4470a6"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://releases.gitpod.io/cli/releases/20260402.10948.0/gitpod-linux-arm64"
-      sha256 "15d97729c6ae2ab3dfe8173b4f23667132f03609d73c20dba83cb65654e5577a"
+      url "https://releases.gitpod.io/cli/releases/20260407.10944.0/gitpod-linux-arm64"
+      sha256 "1e0fa68574cc84895518a3337531ce1eb2b35379f485c9fbab4e70f0967e3f49"
     else
-      url "https://releases.gitpod.io/cli/releases/20260402.10948.0/gitpod-linux-amd64"
-      sha256 "6428578a65f859f3f2b9a8b04b74ea8467a6638af8d389e14681395259c8bd30"
+      url "https://releases.gitpod.io/cli/releases/20260407.10944.0/gitpod-linux-amd64"
+      sha256 "9a45b987259ec70cf9a4d5373f712d0ed837605615a9ce733027edb52cd64bb1"
     end
   end
 
