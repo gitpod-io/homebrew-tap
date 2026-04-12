@@ -10,7 +10,15 @@ To tap this repository, run:
 brew tap gitpod-io/tap
 ```
 
-## Gitpod CLI
+## Ona CLI
+
+To install the `ona` CLI locally on Linux or macOS, simply install it via this tap:
+
+```bash
+brew install gitpod-io/tap/ona
+```
+
+## Gitpod Classic CLI
 
 To install Gitpod's command line interface on Linux or macOS, simply install it via this tap:
 
